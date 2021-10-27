@@ -1,2 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+.container section .countdown__parent .countdown__top::before, .container section .countdown__parent .countdown__top > div::before, .container section .countdown__parent .countdown__bottom::before, .container section .countdown__parent .countdown__bottom::after { display: flex; height: 100%; line-height: 0; justify-content: center; position: absolute; width: 100%; }
+
+.container section .countdown__parent .countdown__top::before, .container section .countdown__parent .countdown__top > div::before, .container section .countdown__parent .countdown__bottom::before { background: radial-gradient(0.8rem circle at 0 100%, #141419 50%, transparent 50.2%), radial-gradient(0.8rem circle at 100% 100%, #141419 50%, transparent 50.2%); }
+
+.container section .countdown__parent .countdown__bottom::after { background: radial-gradient(0.8rem circle at 0 0, #141419 50%, transparent 50.2%), radial-gradient(0.8rem circle at 100% 0, #141419 50%, transparent 50.2%); }
+
+.container section .countdown__parent .countdown__top::before, .container section .countdown__parent .countdown__top > div::before, .container section .countdown__parent .countdown__bottom::before { align-items: flex-end; border-radius: 10px 10px 0 0; background-color: #2c2c44; color: #d64e72; overflow: hidden; }
+
+.container section .countdown__parent .countdown__bottom::after { align-items: flex-start; background-color: #343650; border-radius: 0 0 10px 10px; }
+
+html { box-sizing: border-box; font-size: 100%; }
+
 body { margin: 0; font: 100% "Red Hat Text", sans-serif; font-size: 14px; }
+
+*, *::before, *::after { box-sizing: inherit; }
+
+.container { min-height: 100vh; background: url("../images/bg-stars.svg") no-repeat center center, url("../images/pattern-hills.svg") no-repeat center bottom, linear-gradient(to bottom, #191a24, #241c2b) no-repeat center center; background-size: contain; display: grid; justify-content: center; justify-items: center; grid-template-rows: repeat(3, auto); }
+
+.container header { display: flex; align-items: center; }
+
+.container header h2 { color: white; text-transform: uppercase; letter-spacing: 0.6rem; }
+
+.container section { display: flex; }
+
+.container section .countdown__parent { width: 9rem; height: 8rem; margin: 0 1.5rem; text-align: center; color: #fb6087; font-size: 5rem; position: relative; }
+
+.container section .countdown__parent::before { content: ''; background-color: #141419; border-radius: 10px; height: 100%; position: absolute; top: 6%; left: 0; width: 100%; }
+
+.container section .countdown__parent .time_unit { color: #8486a9; text-transform: uppercase; letter-spacing: 0.4rem; font-size: 14px; }
+
+.container section .countdown__parent .countdown__top, .container section .countdown__parent .countdown__bottom { height: 50%; position: relative; width: 100%; }
+
+.container section .countdown__parent .countdown__top::before { content: attr(data-back); z-index: 5; }
+
+.container section .countdown__parent .countdown__top > div { width: 100%; overflow: hidden; position: relative; z-index: 10; }
+
+.container section .countdown__parent .countdown__top > div::before { content: attr(data-back); transform: rotate(180deg) rotateY(180deg); }
+
+.container section .countdown__parent .countdown__bottom::before { content: attr(data-front); backface-visibility: hidden; top: -100%; z-index: 20; }
+
+.container section .countdown__parent .countdown__bottom::after { content: attr(data-front); overflow: hidden; }
+
+.container footer { display: flex; align-items: center; }
+
+.container footer ul { margin: 0; padding: 0; display: flex; }
+
+.container footer ul li { list-style: none; color: #8486a9; padding: 0 1rem; font-size: 1.75rem; cursor: pointer; }
+
+.container footer ul li:hover { color: #fb6087; }
